@@ -11,3 +11,5 @@ Register and load Jquery to run  the ajax feature in your site which is define i
 Define a function and add_action for the same where you can write your logic of ajax call, you can find the code for the same in https://github.com/pvnrg/wordpress-ajax-call/blob/master/functions.php file.
 
 
+Contact me direcly on skype for any help in wordpress tech: prganvani
+
