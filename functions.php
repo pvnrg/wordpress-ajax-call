@@ -89,3 +89,34 @@ function register_testimonials_module() {
 	register_post_type( 'testimonials', $args );
 }
 add_action( 'init', 'register_testimonials_module', 0 );
+
+
+/* To enable custom theme options with acf plugin */
+/**
+ * ACF Theme Options
+ */
+if ( function_exists( 'acf_add_options_page' ) ) {
+
+    acf_add_options_page(array(
+        'page_title' => 'Theme Options',
+        'menu_title' => 'Theme Options',
+        'menu_slug'  => 'theme-general-settings',
+        'capability' => 'edit_posts',
+        'redirect'   => false,
+        )
+    );
+}
+
+/**
+ * Add ACF Options to Admin Bar
+ */
+add_action( 'admin_bar_menu', 'options_adminbar', 999 );
+
+function options_adminbar( $wp_admin_bar ) {
+    $args = array(
+        'id'    => 'theme_options',
+        'title' => 'Theme Options',
+        'href'  => '/wp-admin/admin.php?page=theme-general-settings',
+    );
+    $wp_admin_bar->add_node( $args );
+}
